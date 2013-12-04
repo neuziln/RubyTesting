@@ -1,4 +1,7 @@
 CouponFinder::Application.routes.draw do
+  resources :statuses
+
+
   get "today/index"
 
   # The priority is based upon order of creation:
