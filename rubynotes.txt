@@ -1,0 +1,36 @@
+ruby notes
+
+
+differences between rails generate and rails scaffold
+
+cmd:
+1.rails generate scaffold status name:string content:text 
+Outcome: created a name field content create status button and hyperlinks
+2.rake routes
+Outcome: gives all places in the application
+
+
+
+edit all pages:
+edititing application.html.erb edits all page info this is also where all includes come from. 
+
+
+
+
+
+
+
+
+
+
+
+sqlite3 notes
+Access development:
+sqlite3 db/development.sqlite3
+Access tables in DB:
+.tables
+
+rake db:create:all
+rake db:migrate
+
+
