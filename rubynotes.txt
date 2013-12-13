@@ -58,6 +58,14 @@ ent
  on config environments development.rb
  
  rails generate devise user
+ 
+rails generate devise:views
+
+make sure if you add fields to app views devise that they can conenct to databsae
+edit the models user.rb
+
+rails consoel
+user = User.first 
 
 
 
