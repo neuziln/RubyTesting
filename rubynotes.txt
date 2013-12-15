@@ -98,7 +98,9 @@ migration file is changes to database from one version to next
 html if you make a sign_out page a get request when browser grabs it would
 automatically sign you out. Thats why you make it a post request
 
+you can make test asserts on test/unit fields are generated from the fixtures (yml)
 
+you can also force user validation on models (app/models/user.rb)
 
 
 sqlite3 notes
@@ -109,5 +111,5 @@ Access tables in DB:
 
 rake db:create:all
 rake db:migrate
-
+rake db:test:prepare
 
