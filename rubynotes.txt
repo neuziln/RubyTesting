@@ -65,12 +65,38 @@ make sure if you add fields to app views devise that they can conenct to databsa
 edit the models user.rb
 
 rails consoel
-user = User.first 
+user = User.first
 
+Status.delete_all delete all database entries for Status
 
+rails generate simple_form:install --bootstrap
 
+using simple_form 
 
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  
+  replaced by <%= f.input :content %>
+  
+  <%= simple_form_for(@status, html: {class:"form-horizontal"}) do |f| %> add horizonal class to all of it
+  
+  status.rb
+  
+  class Status < ActiveRecord::Base
+  attr_accessible :content, :user_id
+  belongs_to :user (belongs_to is ***)
+end
 
+define common queries in user.rb or status.rb (def full_name first_name + "" + last_name end)
+*notes
+what columns shoudl you index(any you plan to query)
+
+migration file is changes to database from one version to next
+
+html if you make a sign_out page a get request when browser grabs it would
+automatically sign you out. Thats why you make it a post request
 
 
 
