@@ -102,6 +102,32 @@ you can make test asserts on test/unit fields are generated from the fixtures (y
 
 you can also force user validation on models (app/models/user.rb)
 
+if you need custom class placement based on conditions go to app helpers 
+open up an rb module and add custom code like 
+module ApplicationHelper
+
+	 def flash_class(type)
+			case type
+				when :alert
+					"alert-error"
+				when :notice
+					"alert-success"
+				else 
+					""
+			end 
+	 end
+end
+
+then on the app views layouts application.rb look at
+<%= flass_class type %>
+
+<% flash.each do |type, message| %>
+			<div class="alert <%= flash_class type %>">
+				<button class="close" data-dismiss="alert">x</button>
+				<%= message %>
+			</div>
+		<% end %>
+
 
 sqlite3 notes
 Access development:
