@@ -64,7 +64,9 @@ rails generate devise:views
 make sure if you add fields to app views devise that they can conenct to databsae
 edit the models user.rb
 
-rails consoel
+rails console
+
+User.delete_all ..
 user = User.first
 
 Status.delete_all delete all database entries for Status
@@ -128,6 +130,14 @@ then on the app views layouts application.rb look at
 			</div>
 		<% end %>
 
+writing an rails generate integration will test all of application
+
+writing a test functional statues_controller gives error on name (that's cause it was changed to full_name) also to fix the error update test fixture states.yml to have user: nathan cause already have user.yml fixture with nathan object
+
+controller tests also = functional test
+
+always read documentation ** for example devise needs some helper code
+to be pasted at the bottom for tests to run riight
 
 sqlite3 notes
 Access development:
