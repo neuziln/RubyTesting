@@ -141,6 +141,17 @@ to be pasted at the bottom for tests to run riight
 
 unit test = model test
 
+  validates :profile_name, format: {
+    with: /\A[a-zA-Z\-\_]+\Z/,
+    message: "must be formatted correctly."
+  }
+  
+    validates :profile_name, presence: true, 
+                           uniqueness: true,
+                           format:  {
+                             with: /a-ZA-Z0-9_-/,
+                           }
+
 sqlite3 notes
 Access development:
 sqlite3 db/development.sqlite3
