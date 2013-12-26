@@ -139,6 +139,8 @@ controller tests also = functional test
 always read documentation ** for example devise needs some helper code
 to be pasted at the bottom for tests to run riight
 
+unit test = model test
+
 sqlite3 notes
 Access development:
 sqlite3 db/development.sqlite3
