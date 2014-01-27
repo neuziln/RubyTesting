@@ -64,7 +64,9 @@ rails generate devise:views
 make sure if you add fields to app views devise that they can conenct to databsae
 edit the models user.rb
 
-rails consoel
+rails console
+
+User.delete_all ..
 user = User.first
 
 Status.delete_all delete all database entries for Status
@@ -102,12 +104,62 @@ you can make test asserts on test/unit fields are generated from the fixtures (y
 
 you can also force user validation on models (app/models/user.rb)
 
+<<<<<<< HEAD
 ruby test*** ruby -Itest test/unit/user_test.rb
 
 
 delete public/index.html and set root path in config/routes.rb:
 
 root :to => 'login#index'
+=======
+if you need custom class placement based on conditions go to app helpers 
+open up an rb module and add custom code like 
+module ApplicationHelper
+
+	 def flash_class(type)
+			case type
+				when :alert
+					"alert-error"
+				when :notice
+					"alert-success"
+				else 
+					""
+			end 
+	 end
+end
+
+then on the app views layouts application.rb look at
+<%= flass_class type %>
+
+<% flash.each do |type, message| %>
+			<div class="alert <%= flash_class type %>">
+				<button class="close" data-dismiss="alert">x</button>
+				<%= message %>
+			</div>
+		<% end %>
+
+writing an rails generate integration will test all of application
+
+writing a test functional statues_controller gives error on name (that's cause it was changed to full_name) also to fix the error update test fixture states.yml to have user: nathan cause already have user.yml fixture with nathan object
+
+controller tests also = functional test
+
+always read documentation ** for example devise needs some helper code
+to be pasted at the bottom for tests to run riight
+
+unit test = model test
+
+  validates :profile_name, format: {
+    with: /\A[a-zA-Z\-\_]+\Z/,
+    message: "must be formatted correctly."
+  }
+  
+    validates :profile_name, presence: true, 
+                           uniqueness: true,
+                           format:  {
+                             with: /a-ZA-Z0-9_-/,
+                           }
+>>>>>>> ca630b3f2a1d7b1a4ec6676f084cb2eca7e0c63d
 
 sqlite3 notes
 Access development:
