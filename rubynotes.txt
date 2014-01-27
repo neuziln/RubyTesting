@@ -102,6 +102,12 @@ you can make test asserts on test/unit fields are generated from the fixtures (y
 
 you can also force user validation on models (app/models/user.rb)
 
+ruby test*** ruby -Itest test/unit/user_test.rb
+
+
+delete public/index.html and set root path in config/routes.rb:
+
+root :to => 'login#index'
 
 sqlite3 notes
 Access development:
