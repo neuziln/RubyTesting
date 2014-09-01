@@ -10,6 +10,7 @@ class StatusesController < ApplicationController
       format.json { render json: @statuses }
     end
   end
+  # Test
 
   # GET /statuses/1
   # GET /statuses/1.json
